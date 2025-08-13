@@ -1,0 +1,49 @@
+{
+  "name": "kannadascript",
+  "version": "1.0.0",
+  "description": "CLI for kannada-script programming language",
+  "author": "Harsh",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "bin/index.js",
+  "bin": {
+    "kannadascript": "./bin/index.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "scripts": {
+    "dev": "node --loader ts-node/esm",
+    "build": "tsup src/* --dts --outDir bin",
+    "clean": "rm -rf bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/kannada-script.git"
+  },
+  "keywords": [
+    "programming-language",
+    "kannada-script",
+    "cli",
+    "compiler",
+    "interpreter",
+    "typescript",
+    "kannada"
+  ],
+  "bugs": {
+    "url": "https://github.com/yourusername/kannada-script/issues"
+  },
+  "homepage": "https://github.com/yourusername/kannada-script#readme",
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "ts-jest": "^27.1.2",
+    "tsup": "^5.11.11",
+    "jest": "^27.4.5",
+    "yargs": "^17.3.1",
+    "chalk": "^5.0.0",
+    "@types/jest": "^27.4.0",
+    "config": "*",
+    "tsconfig": "*",
+    "kannada-script-interpreter": "*"
+  }
+}

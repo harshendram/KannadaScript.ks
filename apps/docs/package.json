@@ -1,0 +1,40 @@
+{
+  "name": "kannada-script-docs",
+  "version": "1.0.0",
+  "description": "Documentation website for KannadaScript programming language",
+  "author": "Harsh",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "clean": "rm -rf .next out"
+  },
+  "dependencies": {
+    "framer-motion": "^6.5.1",
+    "kannada-script-interpreter": "*",
+    "next": "^12.1.0",
+    "prismjs": "^1.27.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-simple-code-editor": "^0.11.0"
+  },
+  "devDependencies": {
+    "@sentry/nextjs": "^6.18.2",
+    "@tailwindcss/typography": "^0.5.1",
+    "@types/gtag.js": "^0.0.8",
+    "@types/prismjs": "^1.16.8",
+    "@types/react": "17.0.37",
+    "autoprefixer": "^10.4.2",
+    "config": "*",
+    "eslint": "7.32.0",
+    "next-remove-imports": "^1.0.6",
+    "next-transpile-modules": "9.0.0",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.22",
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  }
+}

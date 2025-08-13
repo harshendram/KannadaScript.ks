@@ -1,0 +1,51 @@
+{
+  "name": "kannada-script",
+  "version": "1.0.0",
+  "description": "A modern programming language with Kannada-inspired keywords",
+  "author": "Harsh",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "turbo run clean",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.2.0",
+    "@parcel/transformer-typescript-types": "^2.2.0",
+    "prettier": "^2.5.1",
+    "turbo": "latest",
+    "typescript": "^4.5.4"
+  },
+  "keywords": [
+    "kannada-script",
+    "programming-language",
+    "compiler",
+    "parser",
+    "interpreter",
+    "typescript",
+    "kannada",
+    "regional-language"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/kannada-script.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/kannada-script/issues"
+  },
+  "homepage": "https://github.com/yourusername/kannada-script#readme",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "packageManager": "npm@8.1.4"
+}
