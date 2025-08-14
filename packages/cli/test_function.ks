@@ -1,0 +1,8 @@
+"namaskara"  
+"karya greet(name) {"  
+"    vapasu \"Namaskara, \" + name + \"!\";"  
+"}"  
+""  
+"idu message = greet(\"Ravi\");"  
+"helu message;"  
+"matte sigona" 

@@ -14,6 +14,7 @@ import DictionaryLiteral from "../components/visitor/dictionaryLiteral";
 import EmptyStatement from "../components/visitor/emptyStatement";
 import ExpressionStatement from "../components/visitor/expressionStatement";
 import FunctionCall from "../components/visitor/functionCall";
+import FunctionDeclaration from "../components/visitor/functionDeclaration";
 import IdentifierExpression from "../components/visitor/identifierExpression";
 import IfStatement from "../components/visitor/ifStatement";
 import InitStatement from "../components/visitor/initStatement";
@@ -22,6 +23,7 @@ import NullLiteral from "../components/visitor/nullLiteral";
 import NumericLiteral from "../components/visitor/numericLiteral";
 import PrintStatement from "../components/visitor/printStatement";
 import Program from "../components/visitor/program";
+import ReturnStatement from "../components/visitor/returnStatement";
 import StringLiteral from "../components/visitor/stringLiteral";
 import VariableDeclaration from "../components/visitor/variableDeclaration";
 import VariableStatement from "../components/visitor/variableStatement";
@@ -55,10 +57,13 @@ export default class InterpreterModule {
     [NodeType.ContinueStatement]: new ContinueStatement(),
     [NodeType.MemberExpression]: new MemberExpression(),
     [NodeType.FunctionCall]: new FunctionCall(),
+    [NodeType.FunctionDeclaration]: new FunctionDeclaration(),
+    [NodeType.ReturnStatement]: new ReturnStatement(),
   } as Record<string, Visitor>;
 
   private static _currentScope: Scope;
   private static _interpreter: Interpreter;
+  private static _functionTable: Record<string, { params: string[]; body: any }> = {};
 
   static getVisitor(nodeType: string) {
     const visitor = InterpreterModule._visitorMap[nodeType];
@@ -84,5 +89,13 @@ export default class InterpreterModule {
 
   static setCurrentScope(scope: Scope) {
     this._currentScope = scope;
+  }
+
+  static getFunctionTable() {
+    return this._functionTable;
+  }
+
+  static getFunction(name: string) {
+    return this._functionTable[name];
   }
 }
