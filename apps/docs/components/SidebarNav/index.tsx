@@ -8,7 +8,7 @@ interface SidebarNavProps {
 }
 
 const SidebarNav: React.FC<SidebarNavProps> = ({ isOpen, onClose }) => {
-  const [expandedSections, setExpandedSections] = useState<string[]>(['getting-started', 'language-basics']);
+  const [expandedSections, setExpandedSections] = useState<string[]>(['getting-started', 'language-basics', 'control-structures']);
 
   const toggleSection = (sectionId: string) => {
     setExpandedSections(prev => 
@@ -24,33 +24,61 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ isOpen, onClose }) => {
       title: 'Getting Started',
       items: [
         { id: 'introduction', title: 'Introduction', href: '#introduction' },
+        { id: 'quick-start', title: 'Quick Start', href: '#quick-start' },
+        { id: 'installation', title: 'Installation', href: '#installation' },
         { id: 'playground', title: 'Try Playground', href: '#playground' },
-        { id: 'documentation', title: 'Documentation', href: '#documentation' },
       ]
     },
     {
       id: 'language-basics',
       title: 'Language Basics',
       items: [
-        { id: 'variables', title: 'Variables', href: '#variables' },
-        { id: 'data-types', title: 'Data Types', href: '#data-types' },
-        { id: 'operators', title: 'Operators', href: '#operators' },
+        { id: 'program-structure', title: 'Program Structure', href: '#program-structure' },
+        { id: 'keyword-reference', title: 'Keyword Reference', href: '#keyword-reference' },
       ]
     },
     {
       id: 'control-structures',
       title: 'Control Structures',
       items: [
-        { id: 'control-flow', title: 'Control Flow', href: '#control-flow' },
+        { id: 'conditionals', title: 'Conditionals', href: '#conditionals' },
+        { id: 'loops', title: 'Loops', href: '#loops' },
+        { id: 'break-continue', title: 'Break & Continue', href: '#break-continue' },
       ]
     },
     {
       id: 'functions',
       title: 'Functions',
       items: [
-        { id: 'defining-functions', title: 'Defining Functions', href: '#defining-functions' },
+        { id: 'functions', title: 'Functions', href: '#functions' },
       ]
     },
+    {
+      id: 'data-structures',
+      title: 'Data Structures',
+      items: [
+        { id: 'data-structures', title: 'Data Structures', href: '#data-structures' },
+      ]
+    },
+    {
+      id: 'built-in-functions',
+      title: 'Built-in Functions',
+      items: [
+        { id: 'print-output', title: 'Print & Output', href: '#print-output' },
+        { id: 'input-functions', title: 'Input Functions', href: '#input-functions' },
+        { id: 'utility-functions', title: 'Utility Functions', href: '#utility-functions' },
+      ]
+    },
+    {
+      id: 'examples',
+      title: 'Examples',
+      items: [
+        { id: 'basic-examples', title: 'Basic Examples', href: '#basic-examples' },
+        { id: 'advanced-examples', title: 'Advanced Examples', href: '#advanced-examples' },
+        { id: 'real-world-projects', title: 'Real-world Projects', href: '#real-world-projects' },
+      ]
+    },
+
   ];
 
   // Get all section IDs for scroll spy

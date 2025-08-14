@@ -55,7 +55,9 @@ export default class AssignmentExpression extends Expression {
    * @param {*} node
    */
   private _checkValidAssignmentTarget(node: any) {
-    if (node.type === NodeType.IdentifierExpression) return node;
+    if (node.type === NodeType.IdentifierExpression || node.type === NodeType.MemberExpression) {
+      return node;
+    }
 
     throw new SyntaxError("Invalid left hand side in assignment expression");
   }

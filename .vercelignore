@@ -1,0 +1,13 @@
+node_modules
+.git
+.next
+out
+dist
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+packages/*/test
+packages/*/node_modules
+apps/*/node_modules

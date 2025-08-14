@@ -40,9 +40,69 @@ export default class PrimaryExpression extends Expression {
   }
 
   private _getLeftHandSideExpression() {
-    return Expression.getExpressionImpl(
+    // Get the identifier first
+    const identifier = Expression.getExpressionImpl(
       NodeType.IdentifierExpression
     ).getExpression();
+    
+    // Check if the next token is an opening parenthesis (function call)
+    if (this._tokenExecutor.getLookahead()?.type === TokenTypes.OPEN_PARENTHESIS_TYPE) {
+      // This is a function call - we need to parse the arguments
+      this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.OPEN_PARENTHESIS_TYPE);
+      
+      const args: ASTNode[] = [];
+      
+      if (this._tokenExecutor.getLookahead()?.type !== TokenTypes.CLOSED_PARENTHESIS_TYPE) {
+        do {
+          // Parse each argument as an expression - use LogicalORExpression to avoid circular dependency
+          const arg = Expression.getExpressionImpl(
+            NodeType.LogicalORExpression
+          ).getExpression();
+          
+          args.push(arg);
+          
+        } while (
+          this._tokenExecutor.getLookahead()?.type === TokenTypes.COMMA_TYPE &&
+          this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.COMMA_TYPE)
+        );
+      }
+      
+      this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.CLOSED_PARENTHESIS_TYPE);
+      
+      return {
+        type: NodeType.FunctionCall,
+        callee: identifier,
+        arguments: args
+      };
+    }
+    
+    // Check if the next token is an opening bracket (array/object access)
+    if (this._tokenExecutor.getLookahead()?.type === TokenTypes.OPEN_BRACKET_TYPE) {
+      let object = identifier;
+      
+      while (this._tokenExecutor.getLookahead()?.type === TokenTypes.OPEN_BRACKET_TYPE) {
+        this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.OPEN_BRACKET_TYPE);
+        
+        // Use LogicalORExpression instead of AssignmentExpression to avoid circular dependency
+        const property = Expression.getExpressionImpl(
+          NodeType.LogicalORExpression
+        ).getExpression();
+        
+        this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.CLOSED_BRACKET_TYPE);
+        
+        object = {
+          type: NodeType.MemberExpression,
+          object,
+          property,
+          computed: true
+        };
+      }
+      
+      return object;
+    }
+    
+    // Regular identifier
+    return identifier;
   }
 
   private _getSaaluExpression() {
@@ -56,9 +116,9 @@ export default class PrimaryExpression extends Expression {
     
     if (this._tokenExecutor.getLookahead()?.type !== TokenTypes.CLOSED_PARENTHESIS_TYPE) {
       do {
-        // Parse each element as an expression
+        // Parse each element as an expression - use LogicalORExpression to avoid circular dependency
         const element = Expression.getExpressionImpl(
-          NodeType.AssignmentExpression
+          NodeType.LogicalORExpression
         ).getExpression();
         
         elements.push(element);
@@ -95,8 +155,9 @@ export default class PrimaryExpression extends Expression {
         
         this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.COLON_TYPE);
         
+        // Use LogicalORExpression to avoid circular dependency  
         const value = Expression.getExpressionImpl(
-          NodeType.AssignmentExpression
+          NodeType.LogicalORExpression
         ).getExpression();
         
         properties.push({

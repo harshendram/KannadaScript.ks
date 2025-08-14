@@ -42,7 +42,7 @@ export default abstract class Statement {
       case TokenTypes.KARYA_TYPE:
         return bhaiLangModule.getFunctionDeclaration();
 
-      case TokenTypes.WAPASU_TYPE:
+      case TokenTypes.VAPASU_TYPE:
         return bhaiLangModule.getReturnStatement();
 
       default:

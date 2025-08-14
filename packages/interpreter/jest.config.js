@@ -9,5 +9,8 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts',
     '!src/**/*.d.ts',
-  ]
+  ],
+  moduleNameMapping: {
+    '^kannada-script-parser$': '<rootDir>/../parser/src/index.ts'
+  }
 };

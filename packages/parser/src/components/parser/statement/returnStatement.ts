@@ -14,7 +14,7 @@ export default class ReturnStatement extends Statement {
     // vapasu expression;
     
     // Consume vapasu token
-    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.WAPASU_TYPE);
+    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.VAPASU_TYPE);
     
     // Parse return expression (optional)
     let expression: ASTNode | null = null;

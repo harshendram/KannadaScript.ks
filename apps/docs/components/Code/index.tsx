@@ -10,39 +10,50 @@ import Terminal from "./Terminal";
 
 
 const initialCode = `namaskara
-    // Simple calculator example in KannadaScript
-    idu firstNumber = 25;
-    idu secondNumber = 15;
+    // Welcome to KannadaScript!
+    helu "Namaskara! Welcome to KannadaScript";
     
-    helu "Welcome to KannadaScript Calculator!";
-    helu "First number: " + firstNumber;
-    helu "Second number: " + secondNumber;
+    // Variables and data types
+    idu name = "Ravi";
+    idu age = 25;
+    idu isStudent = sari;
     
-    // Basic arithmetic operations
-    idu sum = firstNumber + secondNumber;
-    idu difference = firstNumber - secondNumber;
-    idu product = firstNumber * secondNumber;
+    helu "Name: " + name;
+    helu "Age: " + age;
+    helu "Is student:";
+    helu isStudent;
     
-    helu "Sum: " + sum;
-    helu "Difference: " + difference;
-    helu "Product: " + product;
+    // Arrays (saalu)
+    idu numbers = [1, 2, 3, 4, 5];
+    helu "First number: " + numbers[0];
+    helu "Last number: " + numbers[4];
+    
+    // Dictionary (dict)
+    idu person = {
+        "name": "Priya",
+        "city": "Bengaluru",
+        "age": 22
+    };
+    
+    helu "Person name: " + person["name"];
+    helu "Person city: " + person["city"];
     
     // Conditional logic
-    enadru (sum > 30) {
-        helu "The sum is greater than 30!";
+    enadru (age >= 18) {
+        helu "You are an adult!";
     } illa andre {
-        helu "The sum is 30 or less.";
+        helu "You are a minor.";
     }
     
-    // Simple loop
-    helu "Counting from 1 to 5:";
-    idu counter = 1;
-    ellivargu (counter <= 5) {
-        helu "Count: " + counter;
-        counter = counter + 1;
+    // Loop example
+    helu "Counting:";
+    idu i = 1;
+    ellivargu (i <= 3) {
+        helu "Count: " + i;
+        i = i + 1;
     }
     
-    helu "Calculator finished successfully!";
+    helu "KannadaScript demo completed!";
 matte sigona
 `;
 
@@ -99,6 +110,60 @@ const Code = (props: Props) => {
   const clearCode = () => {
     sendEvents("CodeCleared");
     setCode("");
+  };
+
+  const loadExample = (exampleCode: string) => {
+    setCode(exampleCode);
+    clearTerminal();
+  };
+
+  const examples = {
+    basic: `namaskara
+    helu "Hello, World!";
+    idu name = "KannadaScript";
+    helu "Welcome to " + name;
+matte sigona`,
+    
+    calculator: `namaskara
+    idu a = 15;
+    idu b = 10;
+    
+    helu "Calculator Demo";
+    helu "a = " + a + ", b = " + b;
+    helu "Sum: " + (a + b);
+    helu "Difference: " + (a - b);
+    helu "Product: " + (a * b);
+    helu "Division: " + (a / b);
+matte sigona`,
+    
+    arrays: `namaskara
+    idu fruits = ["Apple", "Banana", "Orange"];
+    idu numbers = [10, 20, 30, 40, 50];
+    
+    helu "Fruits:";
+    helu "First fruit: " + fruits[0];
+    helu "Second fruit: " + fruits[1];
+    
+    helu "Numbers:";
+    idu sum = numbers[0] + numbers[1] + numbers[2];
+    helu "Sum of first 3: " + sum;
+matte sigona`,
+    
+    functions: `namaskara
+    karya greet(name) {
+        vapasu "Namaskara, " + name + "!";
+    }
+    
+    karya add(x, y) {
+        vapasu x + y;
+    }
+    
+    idu message = greet("Ravi");
+    helu message;
+    
+    idu result = add(25, 15);
+    helu "25 + 15 = " + result;
+matte sigona`
   };
 
   const clearTerminal = () => {
@@ -163,18 +228,32 @@ const Code = (props: Props) => {
                     />
                     <h3 className="text-lg font-semibold text-white">Code Editor</h3>
                   </div>
-                  <motion.button
-                    onClick={clearCode}
-                    className="flex items-center space-x-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white rounded-lg text-sm font-medium transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" clipRule="evenodd" />
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L7.586 12l-1.293 1.293a1 1 0 101.414 1.414L9 13.414l1.293 1.293a1 1 0 001.414-1.414L10.414 12l1.293-1.293z" clipRule="evenodd" />
-                    </svg>
-                    <span>Clear</span>
-                  </motion.button>
+                  <div className="flex items-center space-x-2">
+                    <motion.button
+                      onClick={clearCode}
+                      className="flex items-center space-x-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white rounded-lg text-sm font-medium transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L7.586 12l-1.293 1.293a1 1 0 101.414 1.414L9 13.414l1.293 1.293a1 1 0 001.414-1.414L10.414 12l1.293-1.293z" clipRule="evenodd" />
+                      </svg>
+                      <span>Clear</span>
+                    </motion.button>
+                    
+                    <select 
+                      onChange={(e) => e.target.value && loadExample(examples[e.target.value as keyof typeof examples])}
+                      className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white rounded-lg text-sm font-medium transition-all duration-300 border border-gray-600"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>Load Example</option>
+                      <option value="basic">Hello World</option>
+                      <option value="calculator">Calculator</option>
+                      <option value="arrays">Arrays Demo</option>
+                      <option value="functions">Functions Demo</option>
+                    </select>
+                  </div>
                 </div>
               </motion.div>
               <div className="relative">

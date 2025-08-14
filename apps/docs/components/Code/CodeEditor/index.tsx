@@ -34,6 +34,9 @@ const CodeEditor = (props: Props) => {
           onValueChange={(code) => handleChange(code)}
           highlight={(code) => highlightWithLineNumbers(code)}
           padding={10}
+          tabSize={2}
+          insertSpaces={true}
+          ignoreTabKey={false}
           textareaClassName="codeArea"
           className="editor"
           id="codeEditor"

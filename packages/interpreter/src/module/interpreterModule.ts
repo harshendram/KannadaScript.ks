@@ -13,9 +13,11 @@ import ContinueStatement from "../components/visitor/continueStatement";
 import DictionaryLiteral from "../components/visitor/dictionaryLiteral";
 import EmptyStatement from "../components/visitor/emptyStatement";
 import ExpressionStatement from "../components/visitor/expressionStatement";
+import FunctionCall from "../components/visitor/functionCall";
 import IdentifierExpression from "../components/visitor/identifierExpression";
 import IfStatement from "../components/visitor/ifStatement";
 import InitStatement from "../components/visitor/initStatement";
+import MemberExpression from "../components/visitor/memberExpression";
 import NullLiteral from "../components/visitor/nullLiteral";
 import NumericLiteral from "../components/visitor/numericLiteral";
 import PrintStatement from "../components/visitor/printStatement";
@@ -51,6 +53,8 @@ export default class InterpreterModule {
     [NodeType.WhileStatement]: new WhileStatement(),
     [NodeType.BreakStatement]: new BreakStatement(),
     [NodeType.ContinueStatement]: new ContinueStatement(),
+    [NodeType.MemberExpression]: new MemberExpression(),
+    [NodeType.FunctionCall]: new FunctionCall(),
   } as Record<string, Visitor>;
 
   private static _currentScope: Scope;

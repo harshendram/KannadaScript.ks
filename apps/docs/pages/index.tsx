@@ -15,12 +15,17 @@ export default function Docs() {
     <div className="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
       <Head>
         <title>KannadaScript - Modern Programming Language</title>
-        <meta property="og:title" content="KannadaScript - Modern Programming Language with Kannada Syntax" key="title" />
-        <meta property="og:type" content="website" key="type" />
-        <meta property="og:url" content="https://kannadascript.js.org" key="url" />
-        <meta property="og:description" content="KannadaScript is a modern, dynamically typed programming language with intuitive Kannada-inspired syntax. Build applications with arrays, dictionaries, and powerful control flow." key="description" />
         <meta name="description" content="KannadaScript is a modern, dynamically typed programming language with intuitive Kannada-inspired syntax. Build applications with arrays, dictionaries, and powerful control flow." />
-        <meta property="og:site_name" content="KannadaScript Documentation" key="siteName" />
+        <meta property="og:title" content="KannadaScript - Modern Programming Language with Kannada Syntax" />
+        <meta property="og:description" content="A modern programming language with Kannada syntax" />
+        <meta property="og:image" content="/KannadaScriptlogo.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kannadascript.js.org" />
+        <meta property="og:site_name" content="KannadaScript Documentation" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="KannadaScript" />
+        <meta name="twitter:description" content="A modern programming language with Kannada syntax" />
+        <meta name="twitter:image" content="/KannadaScriptlogo.png" />
       </Head>
       
       <Header />
@@ -89,232 +94,67 @@ export default function Docs() {
                 Try Playground
               </motion.a>
               <motion.a
-                href="#documentation"
+                href="#quick-start"
                 className="inline-flex items-center px-8 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-display"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Read Documentation
+                Quick Start
               </motion.a>
             </motion.div>
           </div>
         </motion.section>
 
+        {/* Quick Start Section */}
+        <section id="quick-start" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8 text-center">Quick Start</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div className="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 p-6 rounded-xl border border-cyan-200 dark:border-cyan-800">
+                  <div className="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">1. Learn Syntax</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">Explore KannadaScript&apos;s intuitive Kannada-inspired keywords and syntax patterns.</p>
+                </div>
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
+                  <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">2. Try Examples</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">Run interactive code examples in the playground to see KannadaScript in action.</p>
+                </div>
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">3. Build Projects</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">Start building your own applications with KannadaScript&apos;s powerful features.</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Main Content */}
         <div className="px-4 sm:px-6 lg:px-8">
           <Code />
           <Documentation />
-          
-          {/* Language Documentation Sections */}
-          <div className="max-w-4xl mx-auto space-y-16 py-16">
-            
-            {/* Variables Section */}
-            <section id="variables" className="scroll-mt-24">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-6">Variables</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                  In KannadaScript, variables are declared using the <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono">idu</code> keyword, 
-                  which means "this is" in Kannada.
-                </p>
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                  <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`// Variable declarations
-idu name = "Ravi";
-idu age = 25;
-idu isStudent = sari;  // true
-idu balance = 1000.50;
-
-// Variables can be reassigned
-age = 26;
-balance = balance + 500;`}
-                  </pre>
-                </div>
-              </motion.div>
-            </section>
-
-            {/* Data Types Section */}
-            <section id="data-types" className="scroll-mt-24">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-6">Data Types</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                  KannadaScript supports several built-in data types for different kinds of values.
-                </p>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Numbers</h3>
-                    <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`idu integer = 42;
-idu decimal = 3.14159;
-idu negative = -10;`}
-                    </pre>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Strings</h3>
-                    <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`idu message = "Hello World";
-idu singleQuote = 'Namaskara';
-idu combined = message + " " + singleQuote;`}
-                    </pre>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Booleans</h3>
-                    <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`idu isValid = sari;    // true
-idu isError = thappu;   // false
-idu isEmpty = khali;    // null/empty`}
-                    </pre>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Arrays</h3>
-                    <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`idu numbers = [1, 2, 3, 4, 5];
-idu names = ["Ravi", "Anita", "Kumar"];
-idu mixed = [1, "hello", sari];`}
-                    </pre>
-                  </div>
-                </div>
-              </motion.div>
-            </section>
-
-            {/* Control Flow Section */}
-            <section id="control-flow" className="scroll-mt-24">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-6">Control Flow</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                  Control the flow of your program with conditional statements and loops using intuitive Kannada keywords.
-                </p>
-                
-                <div className="space-y-8">
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Conditional Statements</h3>
-                    <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`idu age = 18;
-
-enadru (age >= 18) {
-    helu "You are an adult";
-} illa andre (age >= 13) {
-    helu "You are a teenager";
-} illa andre {
-    helu "You are a child";
-}`}
-                    </pre>
-                  </div>
-
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">While Loops</h3>
-                    <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`idu counter = 0;
-
-ellivargu (counter < 5) {
-    helu "Count: " + counter;
-    counter = counter + 1;
-}`}
-                    </pre>
-                  </div>
-                </div>
-              </motion.div>
-            </section>
-
-            {/* Operators Section */}
-            <section id="operators" className="scroll-mt-24">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-6">Operators</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                  KannadaScript provides a comprehensive set of operators for mathematical, logical, and comparison operations.
-                </p>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Arithmetic</h3>
-                    <div className="space-y-2 text-sm font-mono text-gray-800 dark:text-gray-200">
-                      <div><code>+</code> Addition</div>
-                      <div><code>-</code> Subtraction</div>
-                      <div><code>*</code> Multiplication</div>
-                      <div><code>/</code> Division</div>
-                      <div><code>%</code> Modulus</div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Comparison</h3>
-                    <div className="space-y-2 text-sm font-mono text-gray-800 dark:text-gray-200">
-                      <div><code>==</code> Equal to</div>
-                      <div><code>!=</code> Not equal</div>
-                      <div><code>&gt;</code> Greater than</div>
-                      <div><code>&lt;</code> Less than</div>
-                      <div><code>&gt;=</code> Greater or equal</div>
-                      <div><code>&lt;=</code> Less or equal</div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Logical</h3>
-                    <div className="space-y-2 text-sm font-mono text-gray-800 dark:text-gray-200">
-                      <div><code>&&</code> Logical AND</div>
-                      <div><code>||</code> Logical OR</div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </section>
-
-            {/* Functions Section */}
-            <section id="defining-functions" className="scroll-mt-24">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-6">Functions</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                  Define reusable functions using the <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono">karya</code> keyword.
-                </p>
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                  <pre className="text-sm font-mono text-gray-800 dark:text-gray-200">
-{`// Define a function
-karya calculate(a, b) {
-    idu sum = a + b;
-    idu product = a * b;
-    
-    helu "Sum: " + sum;
-    helu "Product: " + product;
-    
-    wapasu sum; // return sum
-}
-
-// Call the function
-idu result = calculate(10, 5);
-helu "Result: " + result;`}
-                  </pre>
-                </div>
-              </motion.div>
-            </section>
-
-          </div>
         </div>
       </main>
       

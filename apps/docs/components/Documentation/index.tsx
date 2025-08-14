@@ -1,385 +1,475 @@
+import React from "react";
 import { motion } from "framer-motion";
 import Snippet from "./Snippet";
 
-
-/* This example requires Tailwind CSS v2.0+ */
-const features = [
-  {
-    name: "Program Structure",
-    description: (
-      <>
-        <code className="language-cpp">namaskara</code> is the entry point for the
-        program and all programs must end with{" "}
-        <code className="language-cpp">matte sigona</code>. Anything outside of it
-        will be ignored.
-      </>
-    ),
-    code: `This will be ignored
-
+const Documentation = () => {
+  return (
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto space-y-20">
+        
+        {/* Installation Section */}
+        <motion.section
+          id="installation"
+          className="scroll-mt-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Installation</h2>
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Install via npm</h3>
+              <Snippet
+                code={`npm install -g kannadascript`}
+              />
+            </div>
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Run your first program</h3>
+              <Snippet
+                code={`// Create hello.ks file
 namaskara
-  // Write your KannadaScript code here
+    helu "Namaskara, World!";
 matte sigona
 
-This too will be ignored
-    `,
-  },
-  {
-    name: "Variables & Assignment",
-    description: (
-      <>
-        Variables can be declared using{" "}
-        <code className="language-cpp">idu</code>. KannadaScript supports dynamic typing
-        and multiple assignment operators.
-      </>
-    ),
-    code: `namaskara
-    idu a = 10;
-    idu name = "Harsh";
-    idu isActive = sari;
-    
-    a = a + 1;
-    a += 5;    // Shorthand addition
-    a *= 2;    // Shorthand multiplication
-    name = "KannadaScript";
-matte sigona
-    `,
-  },
-  {
-    name: "Data Types & Null Values",
-    description: (
-      <>
-        Numbers, strings, booleans, and null values. Use{" "}
-        <code className="language-cpp">khali</code> for null,{" "}
-        <code className="language-cpp">sari</code> for true, and{" "}
-        <code className="language-cpp">thappu</code> for false.
-      </>
-    ),
-    code: `namaskara
-    idu number = 42;
-    idu decimal = 3.14;
-    idu text = "Hello World";
-    idu isTrue = sari;
-    idu isFalse = thappu;
-    idu nothing = khali;
-    
-    helu "Number: " + number;
-    helu "Boolean: " + isTrue;
-    helu "Null check: " + (nothing == khali);
-matte sigona
-    `,
-  },
-  {
-    name: "Arrays & Operations",
-    description: (
-      <>
-        Create arrays with <code className="language-cpp">[1, 2, 3]</code> syntax. 
-        Arrays support mixed data types and can be easily manipulated.
-      </>
-    ),
-    code: `namaskara
-    idu numbers = [1, 2, 3, 4, 5];
-    idu fruits = ["apple", "banana", "orange"];
-    idu mixed = [1, "text", sari, khali];
-    
-    helu "Numbers: " + numbers;
-    helu "Fruits: " + fruits;
-    helu "Mixed array: " + mixed;
-    
-    // Arrays concatenate with + operator
-    idu combined = numbers + fruits;
-    helu "Combined: " + combined;
-matte sigona
-    `,
-  },
-  {
-    name: "Dictionaries & Objects",
-    description: (
-      <>
-        Create dictionaries by declaring them as type dict. 
-        Perfect for storing structured data and configurations.
-      </>
-    ),
-    code: `namaskara
-    idu dict person;
-    idu dict config;
-    
-    helu "Creating dictionaries...";
-    helu "Feature coming soon - dictionary literals";
-    
-    // For now, use simple variables
+// Run the program
+kannadascript hello.ks`}
+              />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Program Structure */}
+        <motion.section
+          id="program-structure"
+          className="scroll-mt-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Program Structure</h2>
+          <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl border border-amber-200 dark:border-amber-800 mb-8">
+            <div className="flex items-start mb-4">
+              <div className="w-6 h-6 bg-amber-500 rounded-full mr-3 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">⚠️ Important Program Structure</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                  Every KannadaScript program <strong>must</strong> start with <code className="bg-white dark:bg-gray-800 px-2 py-1 rounded text-amber-600 dark:text-amber-400 font-mono">namaskara</code> and end with <code className="bg-white dark:bg-gray-800 px-2 py-1 rounded text-amber-600 dark:text-amber-400 font-mono">matte sigona</code>. 
+                  Without these keywords, your program will not run and will throw an error.
+                </p>
+              </div>
+            </div>
+            <Snippet
+              code={`namaskara
+    // Your program code goes here
+    helu "Hello, World!";
+matte sigona`}
+            />
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Basic Structure</h3>
+              <Snippet
+                code={`namaskara
+    // Variable declaration
     idu name = "Ravi";
     idu age = 25;
-    idu city = "Bangalore";
     
-    helu "Name: " + name;
+    // Output
+    helu "Hello, " + name;
     helu "Age: " + age;
-    helu "City: " + city;
-matte sigona
-    `,
-  },
-  {
-    name: "Print & Output",
-    description: (
-      <>
-        Use <code className="language-cpp">helu</code> to print anything to
-        the console. Supports expressions, concatenation, and multiple values.
-      </>
-    ),
-    code: `namaskara
-    helu "Hello World";
-    idu a = 10;
-    idu b = 20;
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Program Flow</h3>
+              <Snippet
+                code={`namaskara
+    idu age = 20;
     
-    helu "Sum is: " + (a + b);
-    helu "Product: " + (a * b);
-    helu "Division: " + (b / a);
-    
-    idu person = {"name": "John", "score": 95};
-    helu "Player " + person + " scored high!";
-matte sigona
-    `,
-  },
-  {
-    name: "Arithmetic & Operators",
-    description: (
-      <>
-        Support for all standard arithmetic operators: <code>+</code>, <code>-</code>, 
-        <code>*</code>, <code>/</code>, <code>%</code> and assignment variants.
-      </>
-    ),
-    code: `namaskara
-    idu x = 15;
-    idu y = 4;
-    
-    helu "Addition: " + (x + y);
-    helu "Subtraction: " + (x - y);
-    helu "Multiplication: " + (x * y);
-    helu "Division: " + (x / y);
-    helu "Modulus: " + (x % y);
-    
-    x += 5;    // x = x + 5
-    y *= 3;    // y = y * 3
-    helu "After operations: x=" + x + ", y=" + y;
-matte sigona
-    `,
-  },
-  {
-    name: "Conditionals & Logic",
-    description: (
-      <>
-        Use <code className="language-cpp">enadru</code> for if and <code className="language-cpp">illa andre</code> for else. 
-        Supports comparison and logical operators.
-      </>
-    ),
-    code: `namaskara
-    idu score = 85;
-    idu bonus = 10;
-    
-    enadru (score >= 90) {
-      helu "Excellent! Grade A";
-    } illa andre (score >= 75) {
-      helu "Good job! Grade B";
+    // Conditional logic
+    enadru (age >= 18) {
+        helu "Adult";
     } illa andre {
-      helu "Keep trying! Grade C";
+        helu "Minor";
     }
-    
-    // Logical operators
-    enadru (score > 80 && bonus > 5) {
-      helu "Eligible for reward!";
-    }
-matte sigona
-    `
-  },
-  {
-    name: "Loops & Iteration",
-    description: (
-      <>
-        Use <code className="language-cpp">ellivargu</code> for while loops. 
-        <code className="language-cpp">saaku nilsu</code> to break and <code className="language-cpp">munde nodu</code> to continue.
-      </>
-    ),
-    code: `namaskara
-    idu i = 0;
-    idu sum = 0;
-    
-    ellivargu (i < 10) {
-      enadru (i == 5) {
-        i = i + 1;
-        munde nodu;  // Skip iteration
-      }
-      
-      sum = sum + i;
-      helu "Adding " + i + ", sum now: " + sum;
-      i = i + 1;
-      
-      enadru (sum > 20) {
-        helu "Sum exceeded 20, breaking...";
-        saaku nilsu;  // Break loop
-      }
-    }
-matte sigona
-    `
-  },
-  {
-    name: "Complex Example",
-    description: (
-      <>
-        A comprehensive example showcasing arrays, objects, loops, and conditionals
-        working together in a real-world scenario.
-      </>
-    ),
-    code: `namaskara
-    // Student grade calculator
-    idu totalStudents = 3;
-    idu currentStudent = 0;
-    
-    // Simulated student data processing
-    ellivargu (currentStudent < totalStudents) {
-      idu studentName = "Student " + (currentStudent + 1);
-      idu marks1 = 85 + currentStudent * 5;
-      idu marks2 = 90 - currentStudent * 2;
-      idu marks3 = 88 + currentStudent * 3;
-      
-      idu total = marks1 + marks2 + marks3;
-      idu average = total / 3;
-      
-      helu "Student: " + studentName;
-      helu "Marks: " + marks1 + ", " + marks2 + ", " + marks3;
-      helu "Total: " + total + ", Average: " + average;
-      
-      enadru (average >= 90) {
-        helu "Grade: A+";
-      } illa andre (average >= 80) {
-        helu "Grade: A";
-      } illa andre {
-        helu "Grade: B";
-      }
-      
-      helu "---";
-      currentStudent = currentStudent + 1;
-    }
-matte sigona
-    `
-  },
-  {
-    name: "Advanced Features",
-    description: (
-      <>
-        KannadaScript supports complex expressions, nested conditions, and
-        sophisticated data manipulation for advanced programming scenarios.
-      </>
-    ),
-    code: `namaskara
-    // Advanced calculator with validation
-    idu precision = 2;
-    idu maxValue = 1000;
-    idu enabled = sari;
-    
-    // Process multiple numbers without array indexing
-    idu numbers = [10, 25, 30, 45, 50];
-    idu result = 0;
-    idu processedCount = 0;
-    
-    enadru (enabled == sari) {
-      helu "Configuration loaded successfully";
-      helu "Processing numbers: " + numbers;
-      
-      // Process each number individually
-      idu num1 = 10;
-      idu num2 = 25;
-      idu num3 = 30;
-      idu num4 = 45;
-      idu num5 = 50;
-      
-      ellivargu (processedCount < 5) {
-        idu current = 10; // Default value
-        
-        enadru (processedCount == 0) {
-          current = num1;
-        } illa andre (processedCount == 1) {
-          current = num2;
-        } illa andre (processedCount == 2) {
-          current = num3;
-        } illa andre (processedCount == 3) {
-          current = num4;
-        } illa andre {
-          current = num5;
-        }
-        
-        enadru (current < maxValue) {
-          result = result + current;
-          helu "Added " + current + ", running total: " + result;
-        } illa andre {
-          helu "Value " + current + " exceeds maximum";
-        }
-        
-        processedCount = processedCount + 1;
-      }
-      
-      helu "Final result: " + result;
-      helu "Average: " + (result / 5);
-    }
-matte sigona
-    `
-  }
-];
+matte sigona`}
+              />
+            </div>
+          </div>
+        </motion.section>
 
-export default function Documentation() {
-  return (
-    <motion.section 
-      id="documentation" 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="py-16 md:py-24 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-center mb-12 md:mb-16"
+
+        {/* Keyword Reference Section */}
+        <motion.section
+          id="keyword-reference"
+          className="scroll-mt-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 md:mb-6">
-            Documentation
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Learn KannadaScript with comprehensive examples. From basic variables to complex control flow, 
-            master the syntax that makes programming intuitive and expressive.
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Keyword Reference</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            Complete reference of all KannadaScript keywords and their meanings.
           </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * (index + 2) }}
-              className="group"
-            >
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 shadow-md">
-                    <span className="text-white font-bold text-sm">{index + 1}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {feature.name}
-                  </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-xl p-6 border border-cyan-200 dark:border-cyan-800">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <div className="w-3 h-3 bg-cyan-500 rounded-full mr-2"></div>
+                Variables & Values
+              </h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between items-center">
+                  <code className="text-cyan-600 dark:text-cyan-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">idu</code>
+                  <span className="text-gray-600 dark:text-gray-400">declare variable</span>
                 </div>
-                
-                <div className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  {feature.description}
+                <div className="flex justify-between items-center">
+                  <code className="text-cyan-600 dark:text-cyan-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">sari</code>
+                  <span className="text-gray-600 dark:text-gray-400">true</span>
                 </div>
-                
-                <div className="relative">
-                  <Snippet code={feature.code} />
+                <div className="flex justify-between items-center">
+                  <code className="text-cyan-600 dark:text-cyan-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">thappu</code>
+                  <span className="text-gray-600 dark:text-gray-400">false</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-cyan-600 dark:text-cyan-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">khali</code>
+                  <span className="text-gray-600 dark:text-gray-400">null</span>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <div className="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                Control Flow
+              </h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-600 dark:text-purple-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">enadru</code>
+                  <span className="text-gray-600 dark:text-gray-400">if</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-600 dark:text-purple-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">illa andre</code>
+                  <span className="text-gray-600 dark:text-gray-400">else if / else</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-600 dark:text-purple-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">ellivargu</code>
+                  <span className="text-gray-600 dark:text-gray-400">while</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-600 dark:text-purple-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">saaku nilsu</code>
+                  <span className="text-gray-600 dark:text-gray-400">break</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-purple-600 dark:text-purple-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">munde nodu</code>
+                  <span className="text-gray-600 dark:text-gray-400">continue</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                Functions & Output
+              </h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between items-center">
+                  <code className="text-green-600 dark:text-green-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">karya</code>
+                  <span className="text-gray-600 dark:text-gray-400">function</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-green-600 dark:text-green-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">vapasu</code>
+                  <span className="text-gray-600 dark:text-gray-400">return</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <code className="text-green-600 dark:text-green-400 font-mono bg-white dark:bg-gray-800 px-2 py-1 rounded">helu</code>
+                  <span className="text-gray-600 dark:text-gray-400">print</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Functions Section */}
+        <motion.section
+          id="functions"
+          className="scroll-mt-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Functions</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            Functions in KannadaScript are declared using the <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-purple-600 dark:text-purple-400">karya</code> keyword.
+          </p>
+          <div className="space-y-8">
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Basic Function</h3>
+              <Snippet
+                code={`namaskara
+    karya greet(name) {
+        helu "Namaskara, " + name + "!";
+    }
+    
+    greet("Ravi");
+    greet("Priya");
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Function with Return Value</h3>
+              <Snippet
+                code={`namaskara
+    karya add(a, b) {
+        vapasu a + b;
+    }
+    
+    karya multiply(x, y) {
+        vapasu x * y;
+    }
+    
+    idu sum = add(10, 5);
+    idu product = multiply(4, 3);
+    
+    helu "Sum: " + sum;
+    helu "Product: " + product;
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Advanced Function Example</h3>
+              <Snippet
+                code={`namaskara
+    karya calculateGrade(score) {
+        enadru (score >= 90) {
+            vapasu "A+";
+        } illa andre (score >= 80) {
+            vapasu "A";
+        } illa andre (score >= 70) {
+            vapasu "B";
+        } illa andre (score >= 60) {
+            vapasu "C";
+        } illa andre {
+            vapasu "F";
+        }
+    }
+    
+    idu studentScore = 85;
+    idu grade = calculateGrade(studentScore);
+    helu "Student grade: " + grade;
+matte sigona`}
+              />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Data Structures Section */}
+        <motion.section
+          id="data-structures"
+          className="scroll-mt-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Data Structures</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            KannadaScript supports arrays (<code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-cyan-600 dark:text-cyan-400">saalu</code>) and dictionaries (<code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-cyan-600 dark:text-cyan-400">dict</code>) for organizing data.
+          </p>
+          <div className="space-y-8">
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Arrays (saalu)</h3>
+              <Snippet
+                code={`namaskara
+    // Creating arrays
+    idu numbers = [1, 2, 3, 4, 5];
+    idu names = ["Ravi", "Priya", "Suresh"];
+    idu mixed = [1, "hello", sari, khali];
+    
+    // Accessing array elements
+    helu "First number: " + numbers[0];
+    helu "Second name: " + names[1];
+    
+    // Nested arrays
+    idu matrix = [[1, 2], [3, 4], [5, 6]];
+    helu "Matrix element: " + matrix[1][0];
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Dictionaries (dict)</h3>
+              <Snippet
+                code={`namaskara
+    // Creating dictionaries
+    idu person = {
+        "name": "Ravi",
+        "age": 25,
+        "city": "Bengaluru",
+        "isStudent": thappu
+    };
+    
+    // Accessing dictionary values
+    helu "Name: " + person["name"];
+    helu "Age: " + person["age"];
+    
+    // Nested dictionaries
+    idu company = {
+        "name": "TechCorp",
+        "address": {
+            "street": "MG Road",
+            "city": "Bengaluru",
+            "pincode": 560001
+        }
+    };
+    
+    helu "Company: " + company["name"];
+    helu "City: " + company["address"]["city"];
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Complex Data Structure Example</h3>
+              <Snippet
+                code={`namaskara
+    // Student management system
+    idu students = [
+        {
+            "name": "Ravi",
+            "subjects": ["Math", "Science", "English"],
+            "grades": [85, 92, 78]
+        },
+        {
+            "name": "Priya",
+            "subjects": ["Math", "Science", "English"],
+            "grades": [90, 88, 95]
+        }
+    ];
+    
+    // Access student data
+    idu firstStudent = students[0];
+    helu "Student: " + firstStudent["name"];
+    helu "Math grade: " + firstStudent["grades"][0];
+    
+    // Calculate average grade
+    idu grades = firstStudent["grades"];
+    idu average = (grades[0] + grades[1] + grades[2]) / 3;
+    helu "Average grade: " + average;
+matte sigona`}
+              />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Basic Examples Section */}
+        <motion.section
+          id="basic-examples"
+          className="scroll-mt-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Complete Examples</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            Practical examples to help you get started with KannadaScript programming.
+          </p>
+          <div className="space-y-8">
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Hello World Program</h3>
+              <Snippet
+                code={`namaskara
+    // Your first KannadaScript program
+    helu "Namaskara, World!";
+    helu "Welcome to KannadaScript programming!";
+    
+    // Variables and basic operations
+    idu name = "Ravi";
+    idu age = 25;
+    helu "My name is " + name + " and I am " + age + " years old.";
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Simple Calculator</h3>
+              <Snippet
+                code={`namaskara
+    // Basic arithmetic operations
+    idu a = 10;
+    idu b = 5;
+    
+    helu "Addition: " + (a + b);
+    helu "Subtraction: " + (a - b);
+    helu "Multiplication: " + (a * b);
+    helu "Division: " + (a / b);
+    helu "Modulus: " + (a % b);
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Grade Calculator with Loops</h3>
+              <Snippet
+                code={`namaskara
+    idu scores = [85, 92, 78, 96, 88];
+    idu i = 0;
+    idu total = 0;
+    
+    // Calculate total using while loop
+    ellivargu (i < 5) {
+        total = total + scores[i];
+        i = i + 1;
+    }
+    
+    idu average = total / 5;
+    helu "Average score: " + average;
+    
+    // Determine grade
+    enadru (average >= 90) {
+        helu "Grade: A+ (Excellent!)";
+    } illa andre (average >= 80) {
+        helu "Grade: A (Great job!)";
+    } illa andre (average >= 70) {
+        helu "Grade: B (Good work!)";
+    } illa andre (average >= 60) {
+        helu "Grade: C (Keep improving!)";
+    } illa andre {
+        helu "Grade: F (Need more practice)";
+    }
+matte sigona`}
+              />
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Fibonacci Sequence</h3>
+              <Snippet
+                code={`namaskara
+    karya fibonacci(n) {
+        enadru (n <= 1) {
+            vapasu n;
+        }
+        vapasu fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    
+    helu "Fibonacci sequence:";
+    idu i = 0;
+    ellivargu (i < 10) {
+        helu "F(" + i + ") = " + fibonacci(i);
+        i = i + 1;
+    }
+matte sigona`}
+              />
+            </div>
+          </div>
+        </motion.section>
+
       </div>
-    </motion.section>
+    </div>
   );
-}
+};
+
+export default Documentation;

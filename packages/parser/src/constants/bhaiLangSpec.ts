@@ -71,7 +71,7 @@ export const TokenTypes = {
 
   KARYA_TYPE: "karya",
 
-  WAPASU_TYPE: "wapasu"
+  VAPASU_TYPE: "vapasu"
 };
 
 export const SPEC = [
@@ -112,7 +112,7 @@ export const SPEC = [
   { regex: /^\bdict\b/, tokenType: TokenTypes.SHABDAKOSHA_TYPE },
   { regex: /^\bಶಬ್ದಕೋಶ\b/, tokenType: TokenTypes.SHABDAKOSHA_TYPE },
   { regex: /^\bkarya\b/, tokenType: TokenTypes.KARYA_TYPE },
-  { regex: /^\bvapasu\b/, tokenType: TokenTypes.WAPASU_TYPE },
+  { regex: /^\bvapasu\b/, tokenType: TokenTypes.VAPASU_TYPE },
 
   // Number
   { regex: /^[+-]?([\d]*[.])?[\d]+/, tokenType: TokenTypes.NUMBER_TYPE },

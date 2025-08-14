@@ -10,14 +10,14 @@
 /* Modern Professional Base */
 html {
   scroll-behavior: smooth;
-  background: #fafaf9;
+  background: #ffffff;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 
 html.dark {
-  background: #0a0a0a;
+  background: #0f0f0f;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -27,37 +27,58 @@ html.dark {
 }
 
 body {
-  background: linear-gradient(135deg, #fafaf9 0%, #f5f5f4 50%, #fafaf9 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
   min-height: 100vh;
-  color: #1c1917;
+  color: #0f172a;
   font-weight: 400;
   letter-spacing: -0.025em;
+  line-height: 1.6;
 }
 
 body.dark {
-  background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
-  color: #f5f5f4;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+  color: #f1f5f9;
+}
+
+/* Font Display Class */
+.font-display {
+  font-family: "Cal Sans", "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border-radius: 10px;
+  background: #f1f5f9;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #374151, #6b7280);
-  border-radius: 10px;
-  border: 2px solid #1a1a1a;
+  background: linear-gradient(135deg, #64748b, #94a3b8);
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #4b5563, #9ca3af);
+  background: linear-gradient(135deg, #475569, #64748b);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #475569, #64748b);
+  border: 1px solid #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #64748b, #94a3b8);
 }
 
 /* Smooth Animations */

@@ -21,4 +21,8 @@ export type ASTNode = {
   params?: ASTNode[]; // Function parameters
   callee?: ASTNode; // Function being called
   arguments?: ASTNode[]; // Function call arguments
+  // Member expression fields
+  object?: ASTNode; // Object being accessed
+  property?: ASTNode; // Property being accessed
+  computed?: boolean; // Whether it's computed access (bracket notation)
 };

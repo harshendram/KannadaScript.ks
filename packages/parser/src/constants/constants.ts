@@ -32,4 +32,5 @@ export const NodeType = {
   FunctionDeclaration: "FunctionDeclaration",
   FunctionCall: "FunctionCall",
   ReturnStatement: "ReturnStatement",
+  MemberExpression: "MemberExpression",
 } as const;

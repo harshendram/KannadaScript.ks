@@ -34,31 +34,29 @@ module.exports = {
       },
       colors: {
         primary: {
-          900: "#0c0a09", // rich charcoal
-          800: "#1c1917", // warm dark gray
-          700: "#292524", // coffee brown
-          600: "#44403c", // sophisticated brown
-          500: "#57534e", // elegant gray
-          400: "#78716c", // muted brown
-          300: "#a8a29e", // light gray
-          200: "#d6d3d1", // cream
-          100: "#f5f5f4", // ivory
-          50: "#fafaf9", // pearl
+          950: "#020617",
+          900: "#0f172a",
+          800: "#1e293b",
+          700: "#334155",
+          600: "#475569",
+          500: "#64748b",
+          400: "#94a3b8",
+          300: "#cbd5e1",
+          200: "#e2e8f0",
+          100: "#f1f5f9",
+          50: "#f8fafc",
         },
         accent: {
-          600: "#0891b2", // sophisticated teal
-          500: "#06b6d4", // bright cyan
-          400: "#22d3ee", // electric blue
-          300: "#67e8f9", // light blue
+          600: "#0891b2",
+          500: "#06b6d4",
+          400: "#22d3ee",
+          300: "#67e8f9",
         },
-        luxury: {
-          gold: "#d4af37",
-          platinum: "#e5e4e2",
-          bronze: "#cd7f32",
+        brand: {
+          purple: "#8b5cf6",
+          pink: "#ec4899",
+          blue: "#3b82f6",
         },
-        background: "#0a0a0a", // deep black
-        surface: "#111111", // rich black surface
-        editorBackground: "#0d1117", // GitHub dark
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

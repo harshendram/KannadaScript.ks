@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "node --loader ts-node/esm",
     "build": "tsup src/* --dts --outDir bin",
+    "lint": "echo 'No linting configured for CLI package'",
     "clean": "rm -rf bin"
   },
   "repository": {
