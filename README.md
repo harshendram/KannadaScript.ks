@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="apps/docs/public/KannadaScriptlogo.png" alt="KannadaScript Logo" width="120" />
+</p>
+
 # KannadaScript
 
 Modern, elegant, Kannada‑inspired programming language. Built with TypeScript. Designed for joy.
