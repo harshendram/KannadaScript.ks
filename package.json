@@ -37,12 +37,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/kannada-script.git"
+    "url": "https://github.com/harshendram/KannadaScript.ks.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/kannada-script/issues"
+    "url": "https://github.com/harshendram/KannadaScript.ks/issues"
   },
-  "homepage": "https://github.com/yourusername/kannada-script#readme",
+  "homepage": "https://github.com/harshendram/KannadaScript.ks#readme",
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=16.0.0"

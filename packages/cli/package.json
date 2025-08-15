@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/kannada-script.git"
+    "url": "https://github.com/harshendram/KannadaScript.ks.git"
   },
   "keywords": [
     "programming-language",
@@ -32,9 +32,9 @@
     "kannada"
   ],
   "bugs": {
-    "url": "https://github.com/yourusername/kannada-script/issues"
+    "url": "https://github.com/harshendram/KannadaScript.ks/issues"
   },
-  "homepage": "https://github.com/yourusername/kannada-script#readme",
+  "homepage": "https://github.com/harshendram/KannadaScript.ks#readme",
   "devDependencies": {
     "ts-node": "^10.4.0",
     "ts-jest": "^27.1.2",

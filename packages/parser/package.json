@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/kannada-script.git"
+    "url": "https://github.com/harshendram/KannadaScript.ks.git"
   },
   "keywords": [
     "parser",
@@ -31,9 +31,9 @@
     "kannada"
   ],
   "bugs": {
-    "url": "https://github.com/yourusername/kannada-script/issues"
+    "url": "https://github.com/harshendram/KannadaScript.ks/issues"
   },
-  "homepage": "https://github.com/yourusername/kannada-script#readme",
+  "homepage": "https://github.com/harshendram/KannadaScript.ks#readme",
   "devDependencies": {
     "string-width": "^5.1.0",
     "ts-node": "^10.4.0",

@@ -1,252 +1,147 @@
-# 🚀 KannadaScript
+# KannadaScript
 
-**KannadaScript** is a modern programming language with Kannada-inspired keywords, built with TypeScript. Write code using familiar Kannada terms while leveraging the power of a robust parser and interpreter.
+Modern, elegant, Kannada‑inspired programming language. Built with TypeScript. Designed for joy.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node-18+-339933?logo=node.js&logoColor=white)
+![Turbo](https://img.shields.io/badge/Build-Turborepo-000000?logo=vercel&logoColor=white)
+![Next.js](https://img.shields.io/badge/Docs-Next.js-000000?logo=nextdotjs&logoColor=white)
 
-## ✨ Features
+### Why KannadaScript?
 
-- 🌐 **Kannada-inspired syntax** - Write code using familiar Kannada keywords
-- 🔧 **Modern TypeScript implementation** - Built with TypeScript for type safety
-- 🎯 **Complete language support** - Variables, conditionals, loops, functions, arrays, and objects
-- 🖥️ **Interactive playground** - Test your code in a web-based editor
-- 📚 **Comprehensive documentation** - Learn with examples and tutorials
+- **Kannada‑first syntax**: expressive keywords that feel native
+- **Batteries included**: variables, conditionals, loops, functions, arrays, dictionaries
+- **Robust toolchain**: parser, interpreter, CLI, and documentation site
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/kannada-script.git
-   cd kannada-script
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Build the project**
-   ```bash
-   npm run build
-   ```
-
-4. **Install CLI globally (optional)**
-   ```bash
-   npm install -g kannada-script
-   ```
-
-### Running Your First Program
-
-1. **Create a KannadaScript file** (`hello.kl`)
-   ```kannadascript
-   namaskara
-       helu "Hello, World!";
-   matte sigona
-   ```
-
-2. **Run the program**
-   ```bash
-   # If installed globally
-   kannadascript hello.kl
-   
-   # Or using npx
-   npx kannada-script hello.kl
-   ```
-
-## 📖 Language Syntax
-
-### Program Structure
-Every KannadaScript program starts with `namaskara` and ends with `matte sigona`:
+### Hello, World
 
 ```kannadascript
 namaskara
-    // Your code here
+    helu "Namaskara, KannadaScript!";
 matte sigona
 ```
 
-### Variables
-Declare variables using `idu`:
+## Quick Start
 
-```kannadascript
-namaskara
-    idu name = "Harsh";
-    idu age = 25;
-    idu isStudent = sari;  // true
-    idu score = khali;     // null
-matte sigona
+### Option A — Use the CLI (recommended)
+
+```bash
+npm i -g kannadascript
+kannadascript path/to/program.ks
+
+# or without installing globally
+npx kannadascript path/to/program.ks
 ```
 
-### Output
-Use `helu` to print to console:
+### Option B — From source (monorepo)
 
-```kannadascript
-namaskara
-    idu message = "Welcome to KannadaScript!";
-    helu message;
-    helu "Age:", 25;
-matte sigona
+```bash
+git clone https://github.com/harshendram/kannada-script.git
+cd kannada-script
+npm install
+npm run build
+
+# Run the CLI from the repo
+node packages/cli/bin/index.js examples/hello.ks
 ```
 
-### Conditionals
-Use `enadru` (if), `illa andre` (else if/else):
+## Language Essentials
+
+- **Program**: starts with `namaskara`, ends with `matte sigona`
+- **Variables**: `idu name = "Harsh";`
+- **Output**: `helu "Hello";`
+- **Conditions**:
 
 ```kannadascript
 namaskara
     idu score = 85;
-    
     enadru (score >= 90) {
-        helu "Excellent! Grade A";
+        helu "A";
     } illa andre (score >= 75) {
-        helu "Good job! Grade B";
+        helu "B";
     } illa andre {
-        helu "Keep trying! Grade C";
+        helu "C";
     }
 matte sigona
 ```
 
-### Loops
-Use `ellivargu` for while loops:
+- **Loops**:
 
 ```kannadascript
 namaskara
-    idu counter = 1;
-    
-    ellivargu (counter <= 5) {
-        helu "Count:", counter;
-        counter = counter + 1;
+    idu i = 1;
+    ellivargu (i <= 3) {
+        helu i;
+        i = i + 1;
     }
 matte sigona
 ```
 
-### Arrays
-Use `saalu()` for arrays:
+- **Functions**:
 
 ```kannadascript
 namaskara
-    idu numbers = saalu(1, 2, 3, 4, 5);
-    idu fruits = saalu("apple", "banana", "orange");
-    
-    helu numbers;
-    helu fruits;
+    karya add(a, b) { vapasu a + b; }
+    helu add(2, 3);
 matte sigona
 ```
 
-### Objects
-Use `dict()` for dictionaries/objects:
-
-```kannadascript
-namaskara
-    idu person = dict("name": "Harsh", "age": 25, "city": "Bangalore");
-    
-    helu person;
-    helu "Name:", person["name"];
-matte sigona
-```
-
-### Functions
-Use `karya` to define functions and `vapasu` to return:
-
-```kannadascript
-namaskara
-    karya calculateSum(a, b) {
-        idu result = a + b;
-        vapasu result;
-    }
-    
-    idu sum = calculateSum(10, 20);
-    helu "Sum:", sum;
-matte sigona
-```
-
-## 🛠️ Development
-
-### Project Structure
+## Monorepo
 
 ```
 kannada-script/
 ├── packages/
-│   ├── parser/          # Language parser
-│   ├── interpreter/     # Code interpreter
-│   ├── cli/            # Command-line interface
-│   └── config/         # Shared configurations
-├── apps/
-│   └── docs/           # Documentation website
-└── README.md
+│   ├── parser/        # Language parser
+│   ├── interpreter/   # Runtime interpreter
+│   ├── cli/           # Command‑line interface
+│   └── config/        # Shared configs
+└── apps/
+    └── docs/          # Documentation website (Next.js)
 ```
 
-### Building from Source
+## Development
 
-1. **Clone and setup**
-   ```bash
-   git clone https://github.com/yourusername/kannada-script.git
-   cd kannada-script
-   npm install
-   ```
+Prerequisites: Node.js 18+ (16+ supported), npm 8+
 
-2. **Build all packages**
-   ```bash
-   npm run build
-   ```
+```bash
+# 1) Install
+npm install
 
-3. **Run tests**
-   ```bash
-   npm test
-   ```
+# 2) Build everything
+npm run build
 
-4. **Start development server (docs)**
-   ```bash
-   npm run dev
-   ```
+# 3) Start docs site (http://localhost:3000 or 3001)
+npm run dev
 
-### Available Scripts
+# 4) Test (where available)
+npm test
 
-- `npm run build` - Build all packages
-- `npm run dev` - Start development server
-- `npm test` - Run all tests
-- `npm run lint` - Run ESLint
-- `npm run clean` - Clean build artifacts
+# 5) Lint / Clean
+npm run lint
+npm run clean
+```
 
-## 🌐 Try Online
+### Working on the CLI locally
 
-Visit our [online playground](https://kannadascript.netlify.app) to try KannadaScript in your browser without any installation.
+```bash
+# Build the CLI package then run it
+npm run build -w packages/cli
+node packages/cli/bin/index.js path/to/program.ks
+```
 
-## 📚 Documentation
+## Contributing
 
-For comprehensive documentation, examples, and tutorials, visit:
-- [Language Reference](https://kannadascript.netlify.app/docs)
-- [Examples](https://kannadascript.netlify.app/examples)
-- [API Documentation](https://kannadascript.netlify.app/api)
+PRs welcome! Please:
 
-## 🤝 Contributing
+- Use clear commit messages
+- Add tests when relevant
+- Keep the language elegant and the DX smooth
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork → 2) Branch → 3) Commit → 4) PR
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## License
 
-## 📄 License
+MIT © 2025 `harshendram`. See [LICENSE](LICENSE).
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by regional programming languages
-- Built with modern TypeScript and Node.js ecosystem
-- Community-driven development
-
----
-
-**Happy coding with KannadaScript! 🎉**
-
-For questions or support, please open an issue on GitHub.
+— Happy coding with KannadaScript ✨
