@@ -22,6 +22,12 @@ namaskara
 matte sigona
 ```
 
+## Video Demo
+
+[![Watch the demo](https://img.youtube.com/vi/RyXIUPj4gxc/hqdefault.jpg)](https://www.youtube.com/watch?v=RyXIUPj4gxc)
+
+Click the thumbnail to watch the KannadaScript demo on YouTube.
+
 ## Quick Start
 
 ### Option A — Use the CLI (recommended)
