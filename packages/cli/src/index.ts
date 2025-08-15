@@ -9,8 +9,8 @@ console.info(
   chalk.hex("#FFFF00")(`
 Kannada-Script Programming Language - Kannadigarinda, Kannadigarigoskara 🔥
 
-Project - https://github.com/chandansgowda/kannada-script
-Youtube - https://youtube.com/@EngineeringinKannada
+Project - https://github.com/harshendram/KannadaScript.ks
+
 `)
 );
 

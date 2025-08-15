@@ -225,7 +225,7 @@ const Header = () => {
 
               {/* GitHub Link */}
               <motion.a
-                href="https://github.com/chandansgowda/kannada-script"
+                href="https://github.com/harshendram/KannadaScript.ks"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-200"

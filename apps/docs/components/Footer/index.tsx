@@ -32,7 +32,7 @@ const Footer = (props: Props) => {
             </p>
             <div className="flex space-x-4 mt-6">
               <motion.a
-                href="https://github.com/chandansgowda/kannada-script"
+                href="https://github.com/harshendram/KannadaScript.ks"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -60,9 +60,9 @@ const Footer = (props: Props) => {
           <div>
             <h4 className="text-white font-semibold mb-4">Community</h4>
             <ul className="space-y-2">
-              <li><a href="https://github.com/chandansgowda/kannada-script" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">GitHub</a></li>
-              <li><a href="https://github.com/chandansgowda/kannada-script/issues" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Issues</a></li>
-              <li><a href="https://github.com/chandansgowda/kannada-script/discussions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Discussions</a></li>
+              <li><a href="https://github.com/harshendram/KannadaScript.ks" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">GitHub</a></li>
+              <li><a href="https://github.com/harshendram/KannadaScript.ks/issues" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Issues</a></li>
+              <li><a href="https://github.com/harshendram/KannadaScript.ks/discussions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Discussions</a></li>
             </ul>
           </div>
         </div>

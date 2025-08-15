@@ -1,8 +1,6 @@
 <h1 align="center">Kannada Script</h1>
 <p align="center">
-<a href="https://lgtm.com/projects/g/chandansgowda/kannada-script/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/chandansgowda/kannada-script.svg?logo=lgtm&logoWidth=18"/></a>
-<a href="https://lgtm.com/projects/g/chandansgowda/kannada-script/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/chandansgowda/kannada-script.svg?logo=lgtm&logoWidth=18"/></a>
-<a href="https://github.com/chandansgowda/kannada-script/actions/workflows/node.js.yml/badge.svg"><img alt="Build" src="https://github.com/chandansgowda/kannada-script/actions/workflows/node.js.yml/badge.svg"/></a>
+<a href="https://github.com/harshendram/KannadaScript.ks/actions/workflows/node.js.yml/badge.svg"><img alt="Build" src="https://github.com/harshendram/KannadaScript.ks/actions/workflows/node.js.yml/badge.svg"/></a>
 <a href="https://kannadascript.js.org/"><img alt="Build" src="https://img.shields.io/badge/website-kannadascript.js.org-orange"/></a>
 <a href="https://www.npmjs.com/package/kannadascript"><img alt="Build" src="https://img.shields.io/badge/npm-kannadascript-orange"/></a>
 
@@ -23,7 +21,7 @@ npm i -g kannadascript
 <h4 align="left">Create a new file</h4><br/>
 
 <h4 align="left">Edit the file with a text editor.
-You can also try out your code on <a href="https://kannadascript.js.org/#playground">Kannada Script PlayGround</a></h4>
+You can also try out your code on <a href="https://kannadascript.js.org/#playground">KannadaScript Playground</a></h4>
 
 ```
 namaskara

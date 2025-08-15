@@ -37,8 +37,8 @@ npx kannadascript path/to/program.ks
 ### Option B — From source (monorepo)
 
 ```bash
-git clone https://github.com/harshendram/kannada-script.git
-cd kannada-script
+git clone https://github.com/harshendram/KannadaScript.ks.git
+cd KannadaScript.ks
 npm install
 npm run build
 
