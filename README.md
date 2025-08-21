@@ -26,7 +26,7 @@ namaskara
 matte sigona
 ```
 
-## Video Demo
+## Video Demo (YouTube)
 
 [![Watch the demo](https://img.youtube.com/vi/RyXIUPj4gxc/hqdefault.jpg)](https://www.youtube.com/watch?v=RyXIUPj4gxc)
 
