@@ -99,6 +99,7 @@ flowchart TD
     classDef docs fill:#fff3e0,stroke:#ef6c00,color:#ef6c00
     classDef external fill:#f3e5f5,stroke:#6a1b9a,color:#6a1b9a
 
+```
 ## Quick Start
 
 ### Option A — Use the CLI (recommended)
